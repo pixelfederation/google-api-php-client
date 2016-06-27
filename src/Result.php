@@ -57,4 +57,12 @@ class Result implements ResultInterface
     {
         return reset($this->findBy($filter, 1));
     }
+
+    /**
+     * @return array
+     */
+    public function findAll()
+    {
+        return $this->result->toArray();
+    }
 }

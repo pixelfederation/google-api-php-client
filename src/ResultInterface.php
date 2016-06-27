@@ -24,4 +24,9 @@ interface ResultInterface
      * @return array
      */
     public function findOneBy(array $filter);
+
+    /**
+     * @return array
+     */
+    public function findAll();
 }
