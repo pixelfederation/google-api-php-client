@@ -1,5 +1,7 @@
 {
   "name": "pixelfederation/google-api-php-client",
+  "license": "BSD-3-Clause",
+  "description": "A wrapper for the official Google api PHP client.",
   "authors": [
     {
       "name": "Juraj Surman",
