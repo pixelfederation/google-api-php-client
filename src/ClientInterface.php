@@ -1,12 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: jsurman
- * Date: 27/06/16
- * Time: 13:49
+ * @author Juraj Surman <jsurman@pixelfederation.com>
  */
 namespace PixelFederation\GoogleApi;
 
+/**
+ * Interface ClientInterface
+ *
+ * @package PixelFederation\GoogleApi
+ */
 interface ClientInterface
 {
     /**

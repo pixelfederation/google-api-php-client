@@ -1,6 +1,14 @@
 <?php
+/**
+ * @author Juraj Surman <jsurman@pixelfederation.com>
+ */
 namespace PixelFederation\GoogleApi\Factory;
 
+/**
+ * Class GoogleServiceFactory
+ *
+ * @package PixelFederation\GoogleApi\Factory
+ */
 class GoogleServiceFactory
 {
 

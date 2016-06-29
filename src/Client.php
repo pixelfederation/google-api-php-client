@@ -1,9 +1,17 @@
 <?php
+/**
+ * @author Juraj Surman <jsurman@pixelfederation.com>
+ */
 namespace PixelFederation\GoogleApi;
 
 use PixelFederation\GoogleApi\Factory\GoogleServiceFactory;
 use PixelFederation\GoogleApi\Factory\ResultFactory;
 
+/**
+ * Class Client
+ *
+ * @package PixelFederation\GoogleApi
+ */
 class Client implements ClientInterface
 {
 

@@ -1,8 +1,16 @@
 <?php
+/**
+ * @author Juraj Surman <jsurman@pixelfederation.com>
+ */
 namespace PixelFederation\GoogleApi\Factory;
 
 use PixelFederation\GoogleApi\Result;
 
+/**
+ * Class ResultFactory
+ *
+ * @package PixelFederation\GoogleApi\Factory
+ */
 class ResultFactory
 {
     /**

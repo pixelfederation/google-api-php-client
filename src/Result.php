@@ -1,8 +1,16 @@
 <?php
+/**
+ * @author Juraj Surman <jsurman@pixelfederation.com>
+ */
 namespace PixelFederation\GoogleApi;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
+/**
+ * Class Result
+ *
+ * @package PixelFederation\GoogleApi
+ */
 class Result implements ResultInterface
 {
     /** @var ArrayCollection */
