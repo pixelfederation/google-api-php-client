@@ -30,7 +30,7 @@ class Result implements ResultInterface
     {
         $result = $this->result->filter(function ($item) use ($filters) {
 
-            // odfiltrujeme vsetko co nesplna oboje podmienky
+            // filter all non valid conditions
             foreach ($filters as $key => $value) {
                 if (!array_key_exists($key, $item) || $item[$key] != $value) {
                     return false;
