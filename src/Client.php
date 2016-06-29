@@ -27,20 +27,30 @@ class Client implements ClientInterface
 
 
     /**
-     * @param string $spreadsheetId The ID of the spreadsheet to retrieve data from.
-     * @param string $name          Name of Sheet
-     * @param array  $keys          Names of column what you can retrieve
-     * @param string $range         The A1 notation of the values to retrieve.
-     *
-     * @return Result
+     * @inheritdoc
      */
     public function getSheetById($spreadsheetId, $name, array $keys, $range = 'A1:XXX')
     {
-
         $spreadSheet = $this->googleServiceFactory->createSheets()->spreadsheets_values;
 
         $result = $spreadSheet->get($spreadsheetId, sprintf("%s!%s", $name, $range))->getValues();
 
         return $this->resultFactory->createResult($result, $keys);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getSheetNames($spreadsheetId)
+    {
+        $spreadSheet = $this->googleServiceFactory->createSheets()->spreadsheets;
+
+        $names = [ ];
+        /** @var \Google_Service_Sheets_Sheet $sheet */
+        foreach ($spreadSheet->get($spreadsheetId)->getSheets() as $sheet) {
+            $names[] = $sheet->getProperties()->getTitle();
+        }
+
+        return $names;
     }
 }
