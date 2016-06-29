@@ -13,16 +13,23 @@ class ResultFactory
      */
     public function createResult(array $result, array $keys)
     {
-        $header = array_intersect(reset($result), $keys);
+        if (empty($keys)) {
+            $header = reset($result);
+        } else {
+            $header = array_intersect(reset($result), $keys);
+        }
 
         // unset header...
         unset($result[key($result)]);
 
         $result = array_map(function ($item) use ($header) {
-            $item = array_intersect_key($item, $header);
-            $item = array_combine($header, $item);
 
-            return $item;
+            $outputItem = [ ];
+            foreach ($header as $key => $value) {
+                $outputItem[$value] = (isset($item[$key]) ? $item[$key] : null);
+            }
+
+            return $outputItem;
 
         }, $result);
 
