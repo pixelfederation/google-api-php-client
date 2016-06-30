@@ -29,8 +29,13 @@ class ResultFactory
      *
      * @return array
      */
-    public function parseGoogleResult(array $result, array $keys = [ ])
+    public function parseGoogleResult($result, array $keys = [ ])
     {
+        // if response is empty or isn`t array - return empty array
+        if (empty($result) || !is_array($result)) {
+            return [ ];
+        }
+
         if (empty($keys)) {
             $header = reset($result);
         } else {
