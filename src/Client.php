@@ -43,7 +43,9 @@ class Client implements ClientInterface
 
         $result = $spreadSheet->get($spreadsheetId, sprintf("%s!%s", $name, $range))->getValues();
 
-        return $this->resultFactory->createResult($result, $keys);
+        $result = $this->resultFactory->parseGoogleResult($result, $keys);
+
+        return $this->resultFactory->createResult($result);
     }
 
     /**

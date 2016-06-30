@@ -15,11 +15,21 @@ class ResultFactory
 {
     /**
      * @param array $result
-     * @param array $keys
      *
      * @return Result
      */
-    public function createResult(array $result, array $keys)
+    public function createResult(array $result)
+    {
+        return new Result($result);
+    }
+
+    /**
+     * @param array $result
+     * @param array $keys
+     *
+     * @return array
+     */
+    public function parseGoogleResult(array $result, array $keys = [ ])
     {
         if (empty($keys)) {
             $header = reset($result);
@@ -41,6 +51,6 @@ class ResultFactory
 
         }, $result);
 
-        return new Result($result);
+        return $result;
     }
 }
