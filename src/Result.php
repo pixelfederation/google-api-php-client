@@ -63,7 +63,9 @@ class Result implements ResultInterface
      */
     public function findOneBy(array $filter)
     {
-        return reset($this->findBy($filter, 1));
+        $result = $this->findBy($filter, 1);
+
+        return reset($result);
     }
 
     /**
