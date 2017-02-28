@@ -37,6 +37,14 @@ class Client implements ClientInterface
         $this->resultFactory = $resultFactory;
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function getNameById($spreadsheetId)
+    {
+        return $this->googleServiceFactory->createSheets()->spreadsheets->get($spreadsheetId)->getProperties()->getTitle();
+    }
+
 
     /**
      * @inheritdoc
