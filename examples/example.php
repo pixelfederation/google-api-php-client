@@ -1,9 +1,14 @@
 <?php
 
 # your vendor autoload path
+use PixelFederation\GoogleApi\Configuration;
+
 require_once '../vendor/autoload.php';
 
-$googleServiceFactory = new \PixelFederation\GoogleApi\Factory\GoogleServiceFactory('Server API key');
+$configuration = new Configuration();
+$configuration->setScopes([ 'https://www.googleapis.com/auth/spreadsheets' ]);
+$configuration->setAuthConfigFile('/path/to/service_account/key/tsm-definition-a0b4cf61c323.json');
+$googleServiceFactory = new \PixelFederation\GoogleApi\Factory\GoogleServiceFactory($configuration);
 $resultFactory = new \PixelFederation\GoogleApi\Factory\ResultFactory();
 $client = new \PixelFederation\GoogleApi\Client($googleServiceFactory, $resultFactory);
 
